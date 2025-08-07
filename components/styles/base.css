@@ -1,0 +1,79 @@
+:root {
+    /* Website Color Palette */
+    --primary: #1E293B;
+    --accent: #1E40AF;
+    --accent-warm: #D97706;
+    --supporting: #FEF3C7;
+    --background: #FFFBF5;
+    --background-soft: #FEF6E4;
+    --background-card: #FFFFFF;
+    --text-primary: #1E293B;
+    --text-secondary: #475569;
+    --text-tertiary: #64748B;
+
+    /* Typography */
+    --font-serif: 'Libre Baskerville', serif;
+    --font-sans: 'Space Grotesk', sans-serif;
+
+    /* Shadows */
+    --shadow-sm: 0 4px 8px rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 8px 16px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 16px 32px rgba(0, 0, 0, 0.12);
+
+    /* Dark Theme */
+    --primary-dark: #0F2027;
+    --accent-dark: #64E8FF;
+    --accent-warm-dark: #FF8A80;
+    --background-dark: #0A1419;
+    --background-card-dark: #1a3d3d;
+    --text-primary-dark: #E8F4F8;
+    --text-secondary-dark: #A8BCC8;
+    --text-tertiary-dark: #6B8A9A;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-sans);
+    background: var(--background);
+}
+
+/* For export versions */
+body.export-version {
+    overflow-y: auto !important;
+    background: white !important;
+}
+
+body.export-version .slide {
+    position: relative !important;
+    transform: none !important;
+    top: 0 !important;
+    left: 0 !important;
+    margin: 0 auto 40px !important;
+    page-break-after: always;
+}
+
+body.export-version .slide:last-child {
+    margin-bottom: 0 !important;
+}
+
+/* Hide controls in export version */
+body.export-version .slide-controls,
+body.export-version .theme-toggle {
+    display: none !important;
+}
+
+@media print {
+    body.export-version {
+        background: white !important;
+    }
+
+    body.export-version .slide {
+        break-after: page;
+        margin: 0 !important;
+    }
+}
